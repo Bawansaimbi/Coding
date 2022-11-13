@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+int binarysearch(int arr[],int low,int high,int x){
+    
+
+        int mid;
+        if(low>high)
+        return false;
+       
+                   else{
+               mid = (low + high) / 2; }
+                   if (x == arr[mid])
+                   return mid;
+       
+               else if (x > arr[mid])       
+                   return binarysearch(arr, x, mid + 1, high);
+               
+               else                     
+                   return binarysearch(arr, x, low, mid - 1); 
+
+}  
+int main()
+{   
+    int array[5]={5,8,9,78,15};
+    int n= sizeof(array)/sizeof(array[0]);
+    
+    int x;
+    cin>>x;
+    int y=binarysearch(array,0,n,x);
+    cout<<y;
+    return 0;
+}
